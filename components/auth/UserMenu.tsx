@@ -7,7 +7,13 @@ import { useState } from 'react';
 import { signOut } from '@/lib/auth';
 import type { UserPublic } from '@/types/api';
 
-export function UserMenu({ user }: { user: UserPublic }) {
+export function UserMenu({
+  user,
+  onSignedOut,
+}: {
+  user: UserPublic;
+  onSignedOut: () => void;
+}) {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const [signingOut, setSigningOut] = useState(false);
@@ -18,8 +24,9 @@ export function UserMenu({ user }: { user: UserPublic }) {
     setSigningOut(true);
     try {
       await signOut();
-      router.refresh();
+      onSignedOut();
       setOpen(false);
+      router.refresh();
     } finally {
       setSigningOut(false);
     }

@@ -35,5 +35,9 @@ export function AuthNav() {
     return <div className="h-8 w-24 animate-pulse rounded-md bg-fd-secondary" aria-hidden />;
   }
 
-  return user ? <UserMenu user={user} /> : <SignInButton />;
+  return user ? (
+    <UserMenu user={user} onSignedOut={() => setUser(null)} />
+  ) : (
+    <SignInButton />
+  );
 }
