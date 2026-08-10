@@ -1,9 +1,11 @@
 import type { MeResponse, UserPublic } from '@/types/api';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000';
+function getApiUrl(): string {
+  return (process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000').replace(/\/$/, '');
+}
 
 export async function getMe(): Promise<UserPublic | null> {
-  const res = await fetch(`${API_URL}/me`, { credentials: 'include' });
+  const res = await fetch(`${getApiUrl()}/me`, { credentials: 'include' });
   if (res.status === 401) return null;
   if (!res.ok) throw new Error('Failed to fetch session');
   const data: MeResponse = await res.json();
@@ -12,11 +14,11 @@ export async function getMe(): Promise<UserPublic | null> {
 
 export function getGoogleSignInUrl(returnTo?: string): string {
   const q = returnTo ? `?returnTo=${encodeURIComponent(returnTo)}` : '';
-  return `${API_URL}/auth/google${q}`;
+  return `${getApiUrl()}/auth/google${q}`;
 }
 
 export async function signOut(): Promise<void> {
-  await fetch(`${API_URL}/auth/logout`, {
+  await fetch(`${getApiUrl()}/auth/logout`, {
     method: 'POST',
     credentials: 'include',
   });
