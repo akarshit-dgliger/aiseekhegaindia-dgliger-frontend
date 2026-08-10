@@ -1,0 +1,26 @@
+{
+  "title": "Language Models",
+  "pages": [
+    "intro",
+    "Tokenization",
+    "NNTraining",
+    "NNInference",
+    "NNInternals",
+    "PostTraining",
+    "EvolutionGpt2",
+    "BaseModels",
+    "Hallucinations",
+    "LLMIdentity",
+    "ThinkingInTokens",
+    "LLMInconsistencies",
+    "PostTrainingReinforcementLearning",
+    "ThinkingRL",
+    "ReinforcementLearning",
+    "LLMJudgement",
+    "Multimodality",
+    "Evaluation",
+    "AccessingLLMs",
+    "QueryToResponse",
+    "HandlingHallucinationRAGLoRA"
+  ]
+}

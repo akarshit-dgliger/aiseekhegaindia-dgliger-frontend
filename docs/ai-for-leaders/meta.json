@@ -1,0 +1,13 @@
+{
+  "title": "AI for Leaders",
+  "pages": [
+    "intro",
+    "curriculum-tree",
+    "curriculum-visual-tree",
+    "curriculum-overview",
+    "machine-learning-fundamentals",
+    "classification-regression-supervised-unsupervised",
+    "algorithms-high-level-overview",
+    "classical-ml-in-market"
+  ]
+}

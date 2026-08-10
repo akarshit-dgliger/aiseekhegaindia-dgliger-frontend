@@ -1,0 +1,8 @@
+{
+  "title": "Machine Learning",
+  "pages": [
+    "intro",
+    "supervised-learning",
+    "logistic_regression_tutorial"
+  ]
+}

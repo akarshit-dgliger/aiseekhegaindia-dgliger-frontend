@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+  --color-indian-saffron: #ff9933;
+  --color-indian-white: #ffffff;
+  --color-indian-green: #138808;
+  --color-indian-blue: #0066ff;
+  --color-accent-orange: #ffb366;
+  --color-accent-green: #20a020;
+  --color-accent-blue: #4da6ff;
+}
+
+@import '../src/css/custom.css';
+
+@layer components {
+  .tutorial-container {
+    @apply min-h-screen bg-gradient-to-br from-slate-900 via-blue-900 to-slate-900;
+  }
+
+  .tutorial-header {
+    @apply bg-white/10 backdrop-blur-md border-b border-white/20 sticky top-0 z-10;
+  }
+
+  .tutorial-card {
+    @apply bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-8 shadow-2xl;
+  }
+
+  .tutorial-button {
+    @apply px-6 py-4 backdrop-blur-sm rounded-xl border border-white/20 text-white font-medium transition-all duration-300 hover:bg-white/20;
+  }
+
+  .tutorial-button-primary {
+    @apply bg-gradient-to-r from-indian-saffron to-red-500 rounded-xl text-white font-medium transition-all duration-300 hover:from-orange-500 hover:to-red-600 shadow-lg;
+  }
+
+  .tutorial-nav-button {
+    @apply px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 whitespace-nowrap;
+  }
+
+  .tutorial-nav-active {
+    @apply bg-gradient-to-r from-indian-saffron to-red-500 text-white shadow-lg;
+  }
+
+  .tutorial-nav-completed {
+    @apply bg-indian-green/20 text-green-300 border border-indian-green/30;
+  }
+
+  .tutorial-nav-inactive {
+    @apply text-white/70 hover:text-white hover:bg-white/10;
+  }
+}
+
+.container {
+  max-width: 1140px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: -0.75rem;
+  margin-right: -0.75rem;
+}
+
+.col {
+  flex: 1 0 0%;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
+.col--4 {
+  flex: 0 0 33.333%;
+  max-width: 33.333%;
+}
+
+@media (max-width: 996px) {
+  .col--4 {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.375rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.button--lg {
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+}
+
+.button--primary {
+  background: var(--ifm-color-primary, #3b82f6);
+  color: #fff;
+  border: none;
+}
+
+.button--primary:hover {
+  background: var(--ifm-color-primary-dark, #1d4ed8);
+  color: #fff;
+  text-decoration: none;
+}
+
+.button--secondary {
+  background: transparent;
+  border: 2px solid var(--ifm-color-primary, #3b82f6);
+  color: var(--ifm-color-primary, #3b82f6);
+}
+
+.button--secondary:hover {
+  background: var(--ifm-color-primary, #3b82f6);
+  color: #fff;
+  text-decoration: none;
+}
+
+.text--center {
+  text-align: center;
+}
+
+.padding-horiz--md {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
