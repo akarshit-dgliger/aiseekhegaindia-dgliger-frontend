@@ -1,7 +1,10 @@
 import type { MeResponse, UserPublic } from '@/types/api';
 
 function getApiUrl(): string {
-  return (process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000').replace(/\/$/, '');
+  let base = (process.env.NEXT_PUBLIC_API_URL ?? 'http://localhost:4000').replace(/\/$/, '');
+  base = base.replace(/\/auth\/google\/callback$/i, '');
+  base = base.replace(/\/auth\/google$/i, '');
+  return base.replace(/\/$/, '');
 }
 
 export async function getMe(): Promise<UserPublic | null> {
